@@ -2,4 +2,11 @@
 Portifolio do desenvolvedor
 
 ## Tarefas
-Começar a aula 2
+Começar a aula 4
+
+## Ícones
+
+nova funcionalidade
+atualização
+correção de bug
+release
