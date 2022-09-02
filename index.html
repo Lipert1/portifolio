@@ -1,3 +1,5 @@
+<?php include 'mail.php';?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,20 +9,21 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <link rel="icon" href="imagens/code.svg">
 </head>
 <body class="bg-light">
 
   <nav class="navbar navbar-light fixed-top bg-light shadow-sm">
     <div class="container-lg">
       <a class="navbar-brand text-danger fw-bold fs-4" href="#">João Vitor Lipert</a>
-      <a href="imagens/CurriculoMeu.pdf" target="”_blank”" class="btn btn-danger"><i class="fa-solid fa-file-arrow-down me-2"></i>Baixar CV</a>
+      <a href="imagens/Curriculo-JoãoVitorLipert.pdf" target="”_blank”" class="btn btn-danger"><i class="fa-solid fa-file-arrow-down me-2"></i>Baixar CV</a>
       <div class="dropdown">
         <button class="btn btn-secondary btn-danger px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fas fa-bars"></i>
         </button>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
           <li><a class="dropdown-item" href="#home">Home</a></li>
-          <li><a class="dropdown-item" href="#sobre-mim">Sobre mim</a></li>
+          <li><a class="dropdown-item" href="#sobre">Sobre mim</a></li>
           <li><a class="dropdown-item" href="#skills">Skills</a></li>
           <li><a class="dropdown-item" href="#portfolio">Portifolio</a></li>
           <li><a class="dropdown-item" href="#contato">Contato</a></li>
@@ -42,7 +45,7 @@
             <p class="text-muted mb-1">Olá eu sou o</p>
             <h1 class="text-danger text-uppercase fs-1 fw-bold">Desenvolvedor</h1>
             <h2 class="fs-4">João Vitor</h2>
-            <p class="mt-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at pellentesque lectus, ac tempor velit. Nullam vel lectus eget sem consequat lobortis. Sed vehicula tellus dui, vel vestibulum ligula vulputate eu. Mauris pellentesque lobortis finibus. Duis in nibh nec justo vehicula bibendum et sit amet turpis. Vivamus eu est at nisi mollis viverra. Ut non pulvinar libero. Morbi porttitor euismod massa sit amet ornare. Proin nec nunc sed purus vulputate mattis ac ac ipsum. Nam gravida vehicula dignissim.</p>
+            <p class="mt-4 text-muted">Bem-vindo ao meu site de portifólio aqui você encontrara meus recentes projetos, as linguagens que possui conhecimento e colocar minhas habilidades em pratica, esse site pretendo continuar com contaste atualizações de acordo com o crescimento das minha habilidades tanto em <b>Front-End </b> quanto em <b>Back-End</b>, mas ao final da página você encontrara meus contatos, fica a vontade em me enviar um e-mail </p>
             <a href="#portfolio" class="btn btn-danger px-3 mt-3">Meu Trabalho</a>
           </div>
         </div>
@@ -62,8 +65,8 @@
       <div class="row">
         <div class="col-md-6">
           <div class="about-text">
-            <h3 class="fs-4 mb-3">Titulo</h3>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at pellentesque lectus, ac tempor velit. Nullam vel lectus eget sem consequat lobortis. Sed vehicula tellus dui, vel vestibulum ligula vulputate eu. Mauris pellentesque lobortis finibus. Duis in nibh nec justo vehicula bibendum et sit amet turpis. Vivamus eu est at nisi mollis viverra. Ut non pulvinar libero. Morbi porttitor euismod massa sit amet ornare. Proin nec nunc sed purus vulputate mattis ac ac ipsum. Nam gravida vehicula dignissim.</p>
+            <h3 class="fs-4 mb-3">Quem eu sou?</h3>
+            <p class="text-muted">Meu nome é João Vitor Lipert e desde de criança sempre fui muito apaixonado por tecnologia, minha paixão por programação começou aos 16 anos com o incentivo da escola em aprender Visual Basic, mas só fui começar na programação de na faculdade em que aprendi muito sobre Python, C, C++ entre outras. Atualmente sou estudante de ciência da computação no Mackenzie, estou cursando o sexto semestre, e com previsão de me formar em dezembro de 2023</p>
           </div>
           <div class="row">
             <div class="col-lg-12 d-flex align-items-center">
@@ -86,6 +89,14 @@
         <div class="col-lg-8">
           <div class="section-title text-center">
             <h2 class="fw-bold mb-5">Skills</h2>
+            <div class="box square photo-wrap">
+              <img  class="icon-img" src="imagens/js.svg">
+              <img  class="icon-img" src="imagens/python.svg">
+              <img  class="icon-img" src="imagens/php.svg">
+              <img  class="icon-img" src="imagens/html5.svg">
+              <img  class="icon-img" src="imagens/css3-alt.svg">
+              <img  class="icon-img" src="imagens/wordpress.svg">
+            </div>
           </div>
         </div>
       </div>
@@ -125,8 +136,8 @@
     </div>
   </section>
 
-  <section class="contact py-5" id="contact">
-    <form action="https://formsubmit.co/el/digage" method="POST">
+  <section class="contact py-5" id="contato">
+    <form action="mail.php" method="POST">
       <div class="container-lg py-4">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -161,20 +172,20 @@
               <form>
                 <div class="row">
                   <div class="col-lg-6 mb-4">
-                    <input type="text" placeholder="Seu Nome" class="form-control form-control-lg fs-6 border-0 shadow-sm" required>
+                    <input type="text" name="nome" placeholder="Seu Nome" class="form-control form-control-lg fs-6 border-0 shadow-sm" required>
                   </div>
                   <div class="col-lg-6 mb-4">
-                    <input type="text" placeholder="Seu Email" class="form-control form-control-lg fs-6 border-0 shadow-sm" required>
+                    <input type="text" name="email" placeholder="Seu Email" class="form-control form-control-lg fs-6 border-0 shadow-sm" required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-12 mb-4">
-                    <input type="text" placeholder="Assunto" class="form-control form-control-lg fs-6 border-0 shadow-sm" required>
+                    <input type="text" name="assunto" placeholder="Assunto" class="form-control form-control-lg fs-6 border-0 shadow-sm" required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-12 mb-4">
-                    <textarea rows="5" placeholder="Sua Mensagem" class="form-control form-control-lg fs-6 border-0 shadow-sm" required></textarea>
+                    <textarea rows="5" name="mensagem" placeholder="Sua Mensagem" class="form-control form-control-lg fs-6 border-0 shadow-sm" required></textarea>
                   </div>
                 </div>
                 <div class="row">
@@ -204,6 +215,5 @@
   </footer>
 
 <script src="js/bootstrap.bundle.min.js"></script>
-<script type="js/main.js"></script>
 </body>
 </html>
