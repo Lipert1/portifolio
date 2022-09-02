@@ -2,6 +2,7 @@ nav li{
 	text-transform: uppercase;
 }
 
-/*.skill-item i{
-	
-}*/
+.icon-img{
+	width: 5%;
+	margin: 0px 20px 0px 20px;
+}
